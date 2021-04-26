@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="m7C-5S-aix" kind="relationship" relationship="rootViewController" id="Orx-B3-fvw"/>
+                        <segue destination="m7C-5S-aix" kind="relationship" relationship="rootViewController" id="NYR-gd-Vk0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJo-TK-zR9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -171,12 +171,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOH-rE-Pku">
-                                <rect key="frame" x="74" y="471" width="267" height="279"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVX-CA-TEW">
+                                <rect key="frame" x="81" y="521" width="253" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="scanner"/>
                                 <connections>
-                                    <action selector="Scanner:" destination="m7C-5S-aix" eventType="touchUpInside" id="JIy-VV-BLe"/>
+                                    <segue destination="upe-bY-64O" kind="show" id="yDn-hJ-dSi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -188,6 +188,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jij-cn-oqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-613.04347826086962" y="1524.7767857142856"/>
+        </scene>
+        <!--Scanner Controller-->
+        <scene sceneID="VvF-lY-ziR">
+            <objects>
+                <viewController id="upe-bY-64O" customClass="QRScannerController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m55-Uv-5AU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="M92-Iz-1OC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hY1-DW-U8M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEl-hS-Crh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-613.04347826086962" y="2189.7321428571427"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="V14-co-dyV">

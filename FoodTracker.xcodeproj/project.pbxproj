@@ -13,6 +13,7 @@
 		B0D46BDD2634A2670037044C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D46BDC2634A2670037044C /* AuthManager.swift */; };
 		B0D46BE22634A2D10037044C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D46BE12634A2D10037044C /* StorageManager.swift */; };
 		B0D46BFD2634A7420037044C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D46BFC2634A7420037044C /* Extensions.swift */; };
+		B0D46C462636A9150037044C /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D46C452636A9150037044C /* QRScannerController.swift */; };
 		B0D6D34E263490A100F9834D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6D34D263490A100F9834D /* AppDelegate.swift */; };
 		B0D6D350263490A100F9834D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6D34F263490A100F9834D /* SceneDelegate.swift */; };
 		B0D6D352263490A100F9834D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6D351263490A100F9834D /* HomeViewController.swift */; };
@@ -56,6 +57,7 @@
 		B0D46BDC2634A2670037044C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		B0D46BE12634A2D10037044C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		B0D46BFC2634A7420037044C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B0D46C452636A9150037044C /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		B0D6D34A263490A100F9834D /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D6D34D263490A100F9834D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D6D34F263490A100F9834D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				B0D6D39B263491B400F9834D /* Onboarding */,
 				B0D6D3B22634923D00F9834D /* EditProfileViewController.swift */,
+				B0D46C452636A9150037044C /* QRScannerController.swift */,
 				B0D6D3B72634924B00F9834D /* SettingViewController.swift */,
 			);
 			path = Others;
@@ -427,6 +430,7 @@
 				B0D6D3882634917700F9834D /* CalendarViewController.swift in Sources */,
 				B0D46BE22634A2D10037044C /* StorageManager.swift in Sources */,
 				B0D46BDD2634A2670037044C /* AuthManager.swift in Sources */,
+				B0D46C462636A9150037044C /* QRScannerController.swift in Sources */,
 				B0D6D3922634918B00F9834D /* RecipeViewController.swift in Sources */,
 				B0D6D3A5263491CE00F9834D /* RegistrationViewController.swift in Sources */,
 				B0D6D352263490A100F9834D /* HomeViewController.swift in Sources */,
