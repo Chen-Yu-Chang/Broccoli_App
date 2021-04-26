@@ -196,14 +196,31 @@
                     <view key="view" contentMode="scaleToFill" id="eC5-je-1Ym">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iL1-Mq-vae" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="81l-Dn-TuA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="V4s-zU-bBC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V4s-zU-bBC" firstAttribute="trailing" secondItem="iL1-Mq-vae" secondAttribute="trailing" id="Lbc-kb-ovq"/>
+                            <constraint firstItem="iL1-Mq-vae" firstAttribute="top" secondItem="V4s-zU-bBC" secondAttribute="top" id="b5y-sn-TDk"/>
+                            <constraint firstItem="iL1-Mq-vae" firstAttribute="leading" secondItem="V4s-zU-bBC" secondAttribute="leading" id="oL4-7Y-u2t"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8JH-VT-yai"/>
+                    <connections>
+                        <outlet property="calendar" destination="iL1-Mq-vae" id="exf-mS-PPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RlN-1J-jit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1323" y="1525"/>
+            <point key="canvasLocation" x="-1323.1884057971015" y="1524.7767857142856"/>
         </scene>
     </scenes>
     <resources>
