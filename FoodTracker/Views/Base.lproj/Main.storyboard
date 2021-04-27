@@ -57,11 +57,39 @@
                         <viewLayoutGuide key="safeArea" id="OYd-nz-Y7U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FzP-X2-KAE"/>
+                    <navigationItem key="navigationItem" id="FzP-X2-KAE">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="5EO-70-bDi">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2XS-jn-0Lh">
+                                <rect key="frame" x="316" y="103" width="94" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="bell" catalog="system"/>
+                                <connections>
+                                    <action selector="Notification:" destination="CWb-Kb-OdB" eventType="touchUpInside" id="uy0-mA-fAI"/>
+                                    <segue destination="Bfc-rQ-kxA" kind="show" id="7nY-Jt-jNi"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BL6-eY-9BT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2001" y="1525"/>
+            <point key="canvasLocation" x="-2001.449275362319" y="1524.7767857142856"/>
+        </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="nDG-bc-6ic">
+            <objects>
+                <viewController id="Bfc-rQ-kxA" customClass="NotificationViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s3D-Zh-JSa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Umr-Dm-TD4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iTZ-f0-FKY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6C-Gj-zIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2001" y="2190"/>
         </scene>
         <!--Home-->
         <scene sceneID="QJ2-jP-Ene">
@@ -240,6 +268,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="house" catalog="system" width="128" height="106"/>

@@ -7,16 +7,25 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController, UITableViewDataSource {
+struct EditProfileFormModel{
+    let label: String
+    let placeholder: String
+    var value: String?
+}
+
+final class EditProfileViewController: UIViewController, UITableViewDataSource {
     
     private let tableVIew: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(FormTableViewCell.self, forCellReuseIdentifier: FormTableViewCell.identifier)
         return tableView
     }()
     
+    private var models = [[EditProfileFormModel]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureModels()
         tableVIew.tableHeaderView = createTableHeaderView()
         tableVIew.dataSource = self
         view.addSubview(tableVIew)
@@ -32,13 +41,32 @@ class EditProfileViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    private func configureModels(){
+        // name username website bio
+        let section1Labels = ["Name","Username", "Bio"]
+        var section1 = [EditProfileFormModel]()
+        for label in section1Labels{
+            let model = EditProfileFormModel(label: label, placeholder: "Enter \(label) ...", value: nil)
+            section1.append(model)
+        }
+        models.append(section1)
+        //email phone gender
+        let section2Labels = ["Email","Phone", "Gender"]
+        var section2 = [EditProfileFormModel]()
+        for label in section2Labels{
+            let model = EditProfileFormModel(label: label, placeholder: "Enter \(label) ...", value: nil)
+            section2.append(model)
+        }
+        models.append(section2)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableVIew.frame = view.bounds
     }
     
     private func createTableHeaderView() -> UIView{
-        let header = UIView(frame: CGRect(x: 0, y:0, width: view.width, height: view.height/3).integral)
+        let header = UIView(frame: CGRect(x: 0, y:0, width: view.width, height: view.height/4).integral)
         let size = header.height/1.5
         let profilePhotoButton = UIButton(frame: CGRect(x: (view.width - size)/2, y: (header.height - size)/2, width: size, height: size))
         header.addSubview(profilePhotoButton)
@@ -57,21 +85,31 @@ class EditProfileViewController: UIViewController, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int{
-        return 1
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 0
+        return models[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Hello World"
+        let model = models[indexPath.section][indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier, for: indexPath) as! FormTableViewCell
+        cell.configure(with: model)
+        cell.delegate = self
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int)->String?{
+        guard section == 1 else {
+            return nil
+        }
+        return "Private Information"
     }
     
     @objc private func didTapSave(){
         //Save info into database
+        dismiss(animated: true, completion: nil)
     }
 
     @objc private func didTapCancel(){
@@ -93,5 +131,13 @@ class EditProfileViewController: UIViewController, UITableViewDataSource {
         actionSheet.popoverPresentationController?.sourceRect = view.bounds
         
         present(actionSheet, animated: true)
+    }
+}
+
+
+extension EditProfileViewController: FormTableViewCellDelegate{
+    func formTableViewVell(_ cell: FormTableViewCell, didUpdateField updatedModel: EditProfileFormModel) {
+        //update the model
+        print(updatedModel.value ?? "nil")
     }
 }
